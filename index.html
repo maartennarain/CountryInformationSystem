@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Country information System</title>
+    <title>Country Information System</title>
     <style>
         html, body {
             height: 100%;
@@ -10,53 +10,40 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
         }
 
         table, th, td {
             border: 1px solid black;
             border-collapse: collapse;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        hr {
+            margin: 20px 0;
         }
     </style>
     <script src="app.js"></script>
 </head>
 <body>
-<!--<div>
-    &lt;!&ndash;Gebruik DOM manipulation om de data uit een country array te lezen en de table rows te populaten&ndash;&gt;
-    <table id="countryTable">
-        <tr>
-            <th>Nummer</th>
-            <th>Naam Land</th>
-            <th>Land Afkorting</th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>Suriname</td>
-            <td>SR</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Nederland</td>
-            <td>NL</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Guyana</td>
-            <td>GY</td>
-        </tr>
-    </table>
-</div>-->
-
-<hr>
-
 <div>
     <table id="personTable">
+        <thead>
         <tr>
-            <th>Volgnummer</th>
-            <th>Voornaam</th>
-            <th>Familienaam</th>
+            <th scope="col">Volgnummer</th>
+            <th scope="col">Voornaam</th>
+            <th scope="col">Familienaam</th>
         </tr>
+        </thead>
+        <tbody>
+        <!-- Rows will be populated by JavaScript -->
+        </tbody>
     </table>
 </div>
-<!--<img src="https://flagcdn.com/gs.svg" alt="Flag">-->
 </body>
 </html>

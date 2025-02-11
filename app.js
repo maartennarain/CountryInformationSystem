@@ -1,33 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
-    let personList = [
-        {
-            "voornaam": "Maarten",
-            "familienaam": "Narain"
-        },
-        {
-            "voornaam": "Roger",
-            "familienaam": "Pique"
-        },
-        {
-            "voornaam": "Emily",
-            "familienaam": "Johnson"
-        },
-        {
-            "voornaam": "Kendrick",
-            "familienaam": "Lamar"
-        }
+
+    // Sample data for persons
+    const persons = [
+        { number: 1, firstName: 'Jan', lastName: 'Jansen' },
+        { number: 2, firstName: 'Piet', lastName: 'Pietersen' },
+        { number: 3, firstName: 'Klaas', lastName: 'Klaassen' }
     ];
 
-    let table = document.getElementById('personTable');
-    let volgnummer = 1;
+    // Function to populate the person table
+    function populatePersonTable(data) {
+        const tableBody = document.querySelector('#personTable tbody');
+        data.forEach(person => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${person.number}</td>
+                <td>${person.firstName}</td>
+                <td>${person.lastName}</td>
+            `;
+            tableBody.appendChild(row);
+        });
+    }
 
-    personList.forEach(person => {
-        let row = table.insertRow();
-        let cell1 = row.insertCell(0);
-        let cell2 = row.insertCell(1);
-        let cell3 = row.insertCell(2);
-        cell1.textContent = volgnummer++;
-        cell2.textContent = person.voornaam;
-        cell3.textContent = person.familienaam;
-    });
+    // Populate tables on page load
+    populatePersonTable(persons);
 });
